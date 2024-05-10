@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Cards from './components/cards';
 function App() {
+  const data = [
+    { title: 'Card 1', description: 'Description of Card 1' },
+    { title: 'Card 2', description: 'Description of Card 2' },
+    { title: 'Card 3', description: 'Description of Card 3' },
+    // Add more data objects as needed
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Cards data={data}/>
     </div>
   );
 }

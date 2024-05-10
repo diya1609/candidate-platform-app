@@ -1,0 +1,168 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  /* .card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  } */
+  
+  .card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 456px;
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    margin-right: 10px;
+  }
+  
+  .title {
+    margin: 0;
+  }
+  
+  .card-content {
+    flex-grow: 1;
+  }
+  
+  .description {
+    margin: 0;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 9; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+  
+  .apply-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: rgb(14, 189, 163);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .apply-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .filters {
+    margin-bottom: 20px;
+  }
+  
+  .filters select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right -87px center;
+    margin-right: 10px; /* Add spacing between dropdowns */
+  }
+  
+  .filters select:last-child {
+    margin-right: 0; /* Remove right margin from the last dropdown */
+  }
+  
+  .filters select::-ms-expand {
+    display: none;
+  }
+  
+  .filters select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Separate the drop arrow with a small section of vertical line */
+  .filters select {
+    padding-right: 30px; /* Adjust as needed */
+    background-size: calc(100% - 30px) 100%;
+  }
+  
+  /* Make the box of the filter a bit bigger */
+  .filters select {
+    width: 250px; /* Adjust as needed */
+  }
+  
+  /* Adjust the width and height to match the dropdown */
+.filters input[type="text"] {
+    margin-top: 10px;
+    width: 250px; /* Same width as dropdown */
+    height: 21px; /* Same height as dropdown */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Add spacing between dropdown and input */
+  }
+  
+  /* Remove right margin from the last input */
+  .filters input[type="text"]:last-child {
+    margin-right: 0;
+  }
+  
+  .title {
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.jobRole {
+    font-size: 20px; /* Larger font size for job role */
+    font-weight: bold; /* Make the job role bold */
+    /* margin-bottom: 5px; Add some space below the job role */
+}
+
+p {
+    font-size: 16px; /* Adjust font size as needed */
+}
+button {
+    width:300px
+}
+
+.description {
+    font-size: 14px; /* Adjust font size as needed */
+    line-height: 1.5; /* Adjust line height as needed */
+    position: relative; /* Position relative for absolute positioning */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.fade-out {
+    position: absolute; /* Position absolute to overlap with overflow */
+    bottom: 0; /* Align at the bottom */
+    right: 0; /* Align at the end */
+    background: linear-gradient(transparent, rgb(77, 76, 76)); /* Apply gradient to fade out */
+}
+
+.view-more-button {
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+.apply-button {
+    margin-top: 10px; /* Adjust margin as needed */
+}

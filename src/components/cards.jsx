@@ -7,6 +7,7 @@ const Cards = ({ data }) => {
   const [selectedLocation, setSelectedLocation] = useState("all");
   const [selectedSalary, setSelectedSalary] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+
   useEffect(() => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -72,15 +73,11 @@ const Cards = ({ data }) => {
           value={selectedSalary}
           onChange={(e) => setSelectedSalary(e.target.value)}
         >
-          <option value="all">Min Base Pay</option>
-          {Array.from(new Set(data1?.map((item) => item))).map(
-            (item, index) => (
-              <option key={index} value={item.minJdSalary}>
-                {item.minJdSalary}
-                {item.salaryCurrencyCode}
-              </option>
-            )
-          )}
+          <option value="all">Minimum Base Pay</option>
+          <option value="0-1000">$0 - $1000</option>
+          <option value="1001-2000">$1001 - $2000</option>
+          <option value="2001-3000">$2001 - $3000</option>
+          {/* Add more options for other salary ranges */}
         </select>
 
         <input
@@ -110,12 +107,24 @@ const Cards = ({ data }) => {
                 );
               })
               .filter((item) => {
-                // Filter based on selected category
-                return (
-                  selectedSalary === "all" ||
-                  item.minJdSalary === selectedSalary
-                );
+                // Parse the minJdSalary to an integer
+                const minSalary = parseInt(item.minJdSalary);
+                // Filter based on selected salary range
+                switch (selectedSalary) {
+                  case "0":
+                    return true; // Return true for all items
+                  case "0-1000":
+                    return minSalary >= 0 && minSalary <= 1000;
+                  case "1001-2000":
+                    return minSalary >= 1001 && minSalary <= 2000;
+                  case "2001-3000":
+                    return minSalary >= 2001 && minSalary <= 3000;
+                  // Add cases for other salary ranges
+                  default:
+                    return true; // Return true for unrecognized or "All" option
+                }
               })
+
               .filter((item) => {
                 // Filter based on company name
                 return item.companyName
@@ -151,7 +160,7 @@ const Cards = ({ data }) => {
                       </p>
                     </div>
                   </div>
-                  <div className="card-content">
+                  <div className="card-content" style={{ marginTop: "12px" }}>
                     <p className="description">{item.jobDetailsFromCompany}</p>
                     <a
                       className="link"

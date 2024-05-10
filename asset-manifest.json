@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/candidate-platform-app/static/css/main.687acb9a.css",
+    "main.js": "/candidate-platform-app/static/js/main.a2beb2de.js",
+    "static/js/453.cb27ae2b.chunk.js": "/candidate-platform-app/static/js/453.cb27ae2b.chunk.js",
+    "index.html": "/candidate-platform-app/index.html",
+    "main.687acb9a.css.map": "/candidate-platform-app/static/css/main.687acb9a.css.map",
+    "main.a2beb2de.js.map": "/candidate-platform-app/static/js/main.a2beb2de.js.map",
+    "453.cb27ae2b.chunk.js.map": "/candidate-platform-app/static/js/453.cb27ae2b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.687acb9a.css",
+    "static/js/main.a2beb2de.js"
+  ]
+}
